@@ -3,4 +3,10 @@
     <string name="text_test" >fadsfasdfadsf</string>
     <string name="play_initial_time">00:00</string>
     <string name="track_number">Track</string>
+
+
+    <string name="font_roboto_bold">font_roboto_bold</string>
+    <string name="font_roboto_light">font_roboto_light</string>
+    <string name="font_roboto_regular">font_roboto_regular</string>
+    <string name="font_roboto_medium">font_roboto_medium</string>
 </resources>

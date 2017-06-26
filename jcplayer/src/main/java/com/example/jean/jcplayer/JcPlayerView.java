@@ -2,12 +2,15 @@ package com.example.jean.jcplayer;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.media.AudioManager;
 import android.os.Build;
 import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
@@ -30,7 +33,7 @@ public class JcPlayerView extends LinearLayout implements
 
     private TextView txtCurrentMusic;
     private ImageButton btnPrev;
-    private ImageButton btnPlay;
+    private ImageView btnPlay;
     private ProgressBar progressBarPlayer;
     private JcAudioPlayer jcAudioPlayer;
     private TextView txtDuration;
@@ -38,6 +41,7 @@ public class JcPlayerView extends LinearLayout implements
     private SeekBar seekBar;
     private TextView txtCurrentDuration;
     private boolean isInitialized;
+    private ImageView ivMute;
 
     private OnInvalidPathListener onInvalidPathListener = new OnInvalidPathListener() {
         @Override
@@ -215,16 +219,18 @@ public class JcPlayerView extends LinearLayout implements
     private void init() {
         inflate(getContext(), R.layout.view_jcplayer, this);
 
+        this.ivMute=(ImageView)findViewById(R.id.ivMute);
         this.progressBarPlayer = (ProgressBar) findViewById(R.id.progress_bar_player);
         this.btnNext = (ImageButton) findViewById(R.id.btn_next);
         this.btnPrev = (ImageButton) findViewById(R.id.btn_prev);
-        this.btnPlay = (ImageButton) findViewById(R.id.btn_play);
+        this.btnPlay = (ImageView) findViewById(R.id.btn_play);
         this.txtDuration = (TextView) findViewById(R.id.txt_total_duration);
         this.txtCurrentDuration = (TextView) findViewById(R.id.txt_current_duration);
         this.txtCurrentMusic = (TextView) findViewById(R.id.txt_current_music);
         this.seekBar = (SeekBar) findViewById(R.id.seek_bar);
         this.btnPlay.setTag(R.drawable.ic_play_black);
 
+        ivMute.setOnClickListener(this);
         btnNext.setOnClickListener(this);
         btnPrev.setOnClickListener(this);
         btnPlay.setOnClickListener(this);
@@ -418,6 +424,12 @@ public class JcPlayerView extends LinearLayout implements
                     .duration(PULSE_ANIMATION_DURATION)
                     .playOn(btnPrev);
             previous();
+        }
+        if(view.getId()==R.id.ivMute)
+        {
+            AudioManager audio = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
+            int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+            Log.d("Volumeee",currentVolume+"");
         }
     }
 
