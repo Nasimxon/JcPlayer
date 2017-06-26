@@ -8,35 +8,35 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="33dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="@dimen/dimen25"
         android:layout_marginEnd="@dimen/dimen16"
         android:layout_marginStart="@dimen/dimen16"
         android:background="@drawable/rounded_corner">
 
         <ImageView
-            android:id="@+id/ivPlay"
+            android:id="@+id/btn_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/dimen16"
-            android:layout_marginStart="@dimen/dimen16"
+            android:layout_marginStart="@dimen/dimen10"
             android:contentDescription="@null"
-            android:src="@android:drawable/ic_media_play" />
+            android:src="@drawable/ic_play_arrow_white" />
 
         <SeekBar
             android:id="@+id/seek_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/dimen16"
-            android:layout_marginStart="@dimen/dimen16"
-            android:layout_toEndOf="@+id/ivPlay"
-            android:layout_toStartOf="@+id/txt_total_duration" />
+            android:layout_marginEnd="@dimen/dimen5"
+            android:layout_marginStart="@dimen/dimen5"
+            android:layout_toEndOf="@+id/btn_play"
+            android:layout_toStartOf="@+id/txt_current_duration" />
 
         <com.example.jean.jcplayer.TypefaceTextView
-            android:id="@+id/txt_total_duration"
+            android:id="@+id/txt_current_duration"
             android:layout_width="wrap_content"
+            android:text="@string/track_number"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/dimen16"
@@ -48,18 +48,19 @@
             android:id="@+id/ivMute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen16"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/sbVolume"
+            android:layout_alignParentEnd="true"
             android:contentDescription="@null"
             android:src="@drawable/ic_volume_up_white" />
 
-        <SeekBar
-            android:id="@+id/sbVolume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="@dimen/dimen16" />
+        <!--<SeekBar-->
+            <!--android:id="@+id/sbVolume"-->
+            <!--android:layout_width="75dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginEnd="@dimen/dimen10" />-->
     </RelativeLayout>
 
     <TextView
@@ -92,7 +93,7 @@
         android:visibility="gone">
 
         <TextView
-            android:id="@+id/txt_current_duration"
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -104,14 +105,14 @@
             android:visibility="gone" />
 
         <!--<SeekBar-->
-            <!--android:id="@+id/seek_bar"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_weight="1"-->
-            <!--android:visibility="gone" />-->
+        <!--android:id="@+id/seek_bar"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:visibility="gone" />-->
 
         <TextView
-
+            android:id="@+id/txt_total_duration"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
@@ -124,7 +125,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/btn_play"
+
         android:layout_width="@dimen/touch_default"
         android:layout_height="@dimen/touch_default"
         android:layout_below="@+id/linearLayout"
