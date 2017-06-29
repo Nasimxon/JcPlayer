@@ -13,22 +13,23 @@
         android:layout_marginBottom="@dimen/dimen25"
         android:layout_marginEnd="@dimen/dimen16"
         android:layout_marginStart="@dimen/dimen16"
-        android:background="@drawable/rounded_corner">
+        >
 
         <RelativeLayout
             android:id="@+id/rlPlay"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_height="wrap_content">
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/btn_play"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dimen10"
                 android:contentDescription="@null"
-                android:src="@drawable/ic_play_arrow_white" />
+                android:src="@drawable/ic_play_arrow_white"
+                android:layout_alignParentStart="true" />
         </RelativeLayout>
 
         <SeekBar
@@ -38,18 +39,18 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/dimen5"
             android:layout_marginStart="@dimen/dimen5"
-            android:layout_toEndOf="@+id/rlPlay"
-            android:layout_toStartOf="@+id/txt_current_duration" />
+android:layout_toEndOf="@id/txt_current_duration"
+            android:layout_toStartOf="@+id/txt_total_duration" />
 
         <com.example.jean.jcplayer.TypefaceTextView
-            android:id="@+id/txt_current_duration"
+            android:id="@+id/txt_total_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/dimen16"
-            android:layout_toStartOf="@+id/ivMute"
+            android:layout_alignParentEnd="true"
             android:text="@string/track_number"
-            android:textColor="@android:color/white"
+            android:textColor="#ccc"
             tools:text="00:30" />
 
         <ImageView
@@ -57,11 +58,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:visibility="gone"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/dimen16"
             android:contentDescription="@null"
             android:src="@drawable/ic_volume_up_white" />
 
+        <com.example.jean.jcplayer.TypefaceTextView
+            android:id="@+id/txt_current_duration"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dimen16"
+            android:gravity="center_vertical"
+            android:text="00:00"
+            tools:text="00:30"
+            android:textAlignment="center"
+            android:textColor="#ccc"
+            />
         <!--<SeekBar-->
         <!--android:id="@+id/sbVolume"-->
         <!--android:layout_width="75dp"-->
@@ -100,17 +115,17 @@
         android:paddingStart="16dp"
         android:visibility="gone">
 
-        <TextView
+        <!--<TextView-->
 
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:text="00:00"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text_size"
-            android:visibility="gone" />
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:text="00:00"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="@dimen/text_size"-->
+        <!--/>-->
 
         <!--<SeekBar-->
         <!--android:id="@+id/seek_bar"-->
@@ -119,17 +134,7 @@
         <!--android:layout_weight="1"-->
         <!--android:visibility="gone" />-->
 
-        <TextView
-            android:id="@+id/txt_total_duration"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:text="00:00"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text_size"
-            android:visibility="gone" />
+
     </LinearLayout>
 
     <ImageButton

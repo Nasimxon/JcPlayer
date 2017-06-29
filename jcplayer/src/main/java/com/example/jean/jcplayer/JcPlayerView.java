@@ -29,6 +29,7 @@ import java.util.List;
 public class JcPlayerView extends LinearLayout implements
         View.OnClickListener, SeekBar.OnSeekBarChangeListener {
 
+    public static String view1="0";
     private static final String TAG = JcPlayerView.class.getSimpleName();
 
     private static final int PULSE_ANIMATION_DURATION = 200;
@@ -93,13 +94,13 @@ public class JcPlayerView extends LinearLayout implements
 
         @Override
         public void onPaused() {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-//                btnPlay.setBackground(ResourcesCompat.getDrawable(getResources(),
-//                        R.drawable.ic_play_black, null));
-//            } else {
-//                btnPlay.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(),
-//                        R.drawable.ic_play_black, null));
-//            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                btnPlay.setBackground(ResourcesCompat.getDrawable(getResources(),
+                        R.drawable.ic_pause_white, null));
+            } else {
+                btnPlay.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(),
+                        R.drawable.ic_pause_white, null));
+            }
             btnPlay.setTag(R.drawable.ic_play_black);
         }
 
@@ -112,10 +113,10 @@ public class JcPlayerView extends LinearLayout implements
         public void onPlaying() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 btnPlay.setBackground(ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.ic_pause_black, null));
+                        R.drawable.ic_pause_white, null));
             } else {
                 btnPlay.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.ic_pause_black, null));
+                        R.drawable.ic_pause_white, null));
             }
             btnPlay.setTag(R.drawable.ic_pause_black);
         }
@@ -231,7 +232,14 @@ public class JcPlayerView extends LinearLayout implements
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_jcplayer, this);
+        if(view1.equalsIgnoreCase("0"))
+        {
+            inflate(getContext(), R.layout.view_jcplayer, this);
+        }
+       else
+        {
+            inflate(getContext(), R.layout.view_jcplayer_two, this);
+        }
         this.ivMute = (ImageView) findViewById(R.id.ivMute);
         this.progressBarPlayer = (ProgressBar) findViewById(R.id.progress_bar_player);
         this.btnNext = (ImageButton) findViewById(R.id.btn_next);
