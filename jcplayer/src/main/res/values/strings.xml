@@ -2,7 +2,7 @@
     <string name="app_name" title="app_name">JCPlayer</string>
     <string name="text_test" >fadsfasdfadsf</string>
     <string name="play_initial_time">00:00</string>
-    <string name="track_number">Track</string>
+    <string name="track_number">00:00</string>
 
 
     <string name="font_roboto_bold">font_roboto_bold</string>
