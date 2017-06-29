@@ -10,18 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginBottom="@dimen/dimen25"
+
         android:layout_marginEnd="@dimen/dimen16"
         android:layout_marginStart="@dimen/dimen16"
         android:background="@drawable/rounded_corner">
 
-        <ImageView
-            android:id="@+id/btn_play"
+        <RelativeLayout
+            android:id="@+id/rlPlay"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/dimen10"
-            android:contentDescription="@null"
-            android:src="@drawable/ic_play_arrow_white" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dimen10"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_play_arrow_white" />
+        </RelativeLayout>
 
         <SeekBar
             android:id="@+id/seek_bar"
@@ -30,7 +38,7 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/dimen5"
             android:layout_marginStart="@dimen/dimen5"
-            android:layout_toEndOf="@+id/btn_play"
+            android:layout_toEndOf="@+id/rlPlay"
             android:layout_toStartOf="@+id/txt_current_duration" />
 
         <com.example.jean.jcplayer.TypefaceTextView
