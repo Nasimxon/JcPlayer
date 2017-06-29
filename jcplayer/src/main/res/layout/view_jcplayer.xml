@@ -21,7 +21,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dimen10"
             android:contentDescription="@null"
-            android:src="@drawable/ic_play_arrow_white" />
+            android:src="@drawable/ic_pause_white" />
 
         <SeekBar
             android:id="@+id/seek_bar"
@@ -36,11 +36,11 @@
         <com.example.jean.jcplayer.TypefaceTextView
             android:id="@+id/txt_current_duration"
             android:layout_width="wrap_content"
-            android:text="@string/track_number"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginEnd="@dimen/dimen16"
             android:layout_toStartOf="@+id/ivMute"
+            android:text="@string/track_number"
             android:textColor="@android:color/white"
             tools:text="00:30" />
 
@@ -48,19 +48,19 @@
             android:id="@+id/ivMute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dimen16"
-            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dimen16"
             android:contentDescription="@null"
             android:src="@drawable/ic_volume_up_white" />
 
         <!--<SeekBar-->
-            <!--android:id="@+id/sbVolume"-->
-            <!--android:layout_width="75dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginEnd="@dimen/dimen10" />-->
+        <!--android:id="@+id/sbVolume"-->
+        <!--android:layout_width="75dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginEnd="@dimen/dimen10" />-->
     </RelativeLayout>
 
     <TextView
@@ -153,10 +153,9 @@
         style="?android:attr/progressBarStyleSmall"
         android:layout_width="23dp"
         android:layout_height="23dp"
-
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+        android:layout_centerInParent="true"
         android:visibility="gone" />
 
     <ImageButton

@@ -423,10 +423,10 @@ public class JcPlayerView extends LinearLayout implements
 
                 if (btnPlay.getTag().equals(R.drawable.ic_pause_black)) {
                     pause();
-                   btnPlay.setImageResource(R.drawable.ic_pause_white);
+                   btnPlay.setImageResource(R.drawable.ic_play_arrow_white);
                 } else {
                     continueAudio();
-                    btnPlay.setImageResource(R.drawable.ic_play_arrow_white);
+                    btnPlay.setImageResource(R.drawable.ic_pause_white);
                 }
             }
         }
