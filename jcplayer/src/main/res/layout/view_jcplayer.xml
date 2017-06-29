@@ -21,7 +21,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/dimen10"
             android:contentDescription="@null"
-            android:src="@drawable/ic_pause_white" />
+            android:src="@drawable/ic_play_arrow_white" />
 
         <SeekBar
             android:id="@+id/seek_bar"
