@@ -95,11 +95,11 @@ public class JcPlayerView extends LinearLayout implements
         @Override
         public void onPaused() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                btnPlay.setBackground(ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.ic_pause_white, null));
+//                btnPlay.setBackground(ResourcesCompat.getDrawable(getResources(),
+//                        R.drawable.ic_pause_white, null));
             } else {
-                btnPlay.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.ic_pause_white, null));
+               /* btnPlay.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(),
+                        R.drawable.ic_pause_white, null));*/
             }
             btnPlay.setTag(R.drawable.ic_play_black);
         }
@@ -112,11 +112,11 @@ public class JcPlayerView extends LinearLayout implements
         @Override
         public void onPlaying() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                btnPlay.setBackground(ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.ic_pause_white, null));
+               /* btnPlay.setBackground(ResourcesCompat.getDrawable(getResources(),
+                        R.drawable.ic_pause_white, null));*/
             } else {
-                btnPlay.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(),
-                        R.drawable.ic_pause_white, null));
+              /*  btnPlay.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(),
+                        R.drawable.ic_pause_white, null));*/
             }
             btnPlay.setTag(R.drawable.ic_pause_black);
         }
